@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto Next.js
 
-## Getting Started
+Este é um projeto desenvolvido com [Next.js](https://nextjs.org), utilizando o comando [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-First, run the development server:
+## Como Iniciar
+
+Para rodar o servidor de desenvolvimento, utilize o comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizar o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Você pode começar a editar a página modificando o arquivo `app/page.tsx`. As alterações serão aplicadas automaticamente.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Componentes
 
-## Learn More
+### ThemeProvider
 
-To learn more about Next.js, take a look at the following resources:
+O componente `ThemeProvider` é utilizado para gerenciar temas no frontend, utilizando a biblioteca [`next-themes`](https://github.com/pacocoursey/next-themes). Ele permite alternar entre temas claros e escuros, ou outros temas personalizados.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Localização
+O arquivo está localizado em:
+```
+src/components/theme-provider.tsx
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Exemplo de Uso
+```tsx
+import { ThemeProvider } from "./components/theme-provider";
 
-## Deploy on Vercel
+export default function App({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="light">
+      {children}
+    </ThemeProvider>
+  );
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Dependências
+- [`next-themes`](https://github.com/pacocoursey/next-themes): Biblioteca para gerenciamento de temas no Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Certifique-se de configurar o atributo `class` no `ThemeProvider` e de incluir as classes de tema no arquivo `tailwind.config.ts` para que o Tailwind CSS aplique os estilos corretamente.
