@@ -34,7 +34,7 @@ export default function Home() {
           </Link>
           <Link
             href="#"
-            className="bg-lime-600 hover:bg-lime-500 text-white px-4 py-2 rounded-md font-medium transition-colors"
+            className="bg-lime-600 hover:bg-lime-500 text-black px-4 py-2 rounded-md font-medium transition-colors"
           >
             Teste grátis
           </Link>
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="flex justify-center space-x-4">
           <Link
             href="#"
-            className="bg-lime-600 hover:bg-lime-500 text-white px-6 py-3 rounded-md font-medium transition-colors"
+            className="bg-lime-600 hover:bg-lime-500 text-black px-6 py-3 rounded-md font-medium transition-colors"
           >
             Teste grátis
           </Link>
